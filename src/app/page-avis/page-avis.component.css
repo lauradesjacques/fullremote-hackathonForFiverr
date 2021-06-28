@@ -1,0 +1,15 @@
+.global {
+  align-items: center;
+  justify-content: space-around;
+}
+p {
+  font-size: 16px;
+}
+
+.champstexte {
+  height: 250px;
+}
+
+.myselect {
+  height: 20%;
+}

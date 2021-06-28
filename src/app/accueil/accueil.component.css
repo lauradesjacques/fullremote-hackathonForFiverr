@@ -1,0 +1,17 @@
+.imagefiver {
+  background-image: url("/assets/fiverr.png");
+  background-size: cover;
+  height: 100vh;
+}
+
+.linko {
+  color: #f11e1ec4;
+  font-size: 15px;
+  font-family: Macan, "Helvetica";
+  position: absolute;
+  float: right;
+  margin-top: 1.9%;
+  margin-left: 40.5%;
+  font-weight: bolder;
+  text-decoration: none;
+}
