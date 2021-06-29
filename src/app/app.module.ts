@@ -7,6 +7,8 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { PageAvisComponent } from './page-avis/page-avis.component';
 import { RouterModule } from '@angular/router';
 import { ROUTES} from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { ROUTES} from './app-routing.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(ROUTES)
+    RouterModule.forRoot(ROUTES),
+    HttpClientModule,
+    
 
   ],
   providers: [],

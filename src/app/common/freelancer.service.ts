@@ -11,6 +11,6 @@ export class FreelancerService {
   constructor(private http: HttpClient) {}
 
   public getFreelancer(): Observable<any> {
-    return this.http.get(this.urlApi + '/read?id=1');
+    return this.http.get(this.urlApi + '/read?freelanceId=1');
   }
 }
