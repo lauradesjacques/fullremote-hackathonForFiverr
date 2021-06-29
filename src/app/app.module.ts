@@ -8,6 +8,7 @@ import { PageAvisComponent } from './page-avis/page-avis.component';
 import { RouterModule } from '@angular/router';
 import { ROUTES} from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -22,6 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     RouterModule.forRoot(ROUTES),
     HttpClientModule,
+    ReactiveFormsModule
     
 
   ],

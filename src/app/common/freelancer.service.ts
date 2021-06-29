@@ -8,9 +8,20 @@ import { Observable } from 'rxjs';
 export class FreelancerService {
   public urlApi: string = 'http://localhost:8080';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   public getFreelancer(): Observable<any> {
-    return this.http.get(this.urlApi + '/read?freelanceId=1');
+    return this.http.get(this.urlApi + '/readall');
+  }
+
+
+  public sendMail(text: string, mail: string) {
+    console.log("boulette");
+
+    let result: Observable<any> = this.http.get(this.urlApi + '/email?text=' + text + '&mail=' + mail + '&sujet=Demandeavis')
+    result.subscribe((reponse) => { });
+
   }
 }
+
+
