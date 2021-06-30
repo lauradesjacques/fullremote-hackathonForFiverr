@@ -1,0 +1,56 @@
+.global {
+    align-items: center;
+    justify-content: space-around;
+  }
+  p {
+    font-size: 16px;
+  }
+  
+  .champstexte {
+    height: 250px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+  
+  .myselect {
+    height: 20%;
+  }
+   #coins{
+     color: #198754;
+     font-weight: bolder;
+   }
+   .circle {
+    display: block;
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    margin: 0;
+   }
+
+.nom{
+  margin-top: 1%;
+}
+
+   .titre{
+     font-size: 12px;
+   }
+
+   .titre1{
+    font-size: 18px;
+    font-weight: bolder;
+    color: #198754;
+    margin-top: 3%;
+  }
+
+   .demandeavis{
+     margin-top: 3%;
+   }
+
+   .message{
+     font-size: 14px;
+     margin-top: 2%;
+   }
+
+   button{
+     margin-bottom: 3%;
+   }
