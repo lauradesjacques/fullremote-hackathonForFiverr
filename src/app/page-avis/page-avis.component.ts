@@ -13,29 +13,49 @@ export class PageAvisComponent implements OnInit {
 
   constructor(private service: FreelancerService, private formB: FormBuilder) { }
 
-  ngOnInit(): void {
-    this.resultat();
-    this.initialForm();
-  }
   public form: FormGroup;
-  public res: any[] = [];
-  public resultat() {
+  public tabFreelance: any[] = [];
+  public tabEmailFreelance: any[] = [];
+  ngOnInit(): void {
+    this.initialForm();
+    this.resultat();
+  }
 
-    let resultat:Observable<any> =this.service.getFreelancer();
-    resultat.subscribe((rep)=>{
-      this.res.push(rep);
-      console.log(this.res);
+
+  public resultat() {
+    let resultat: Observable<any> = this.service.getFreelancer();
+    resultat.subscribe((rep) => {
+      this.tabFreelance = rep;
+      this.mail();
     })
   }
-public text: string = "";
-public soumettre(){
-this.text = this.form.get("text").value;
-this.service.sendMail(this.text, "mohamedboussaid69700@hotmail.fr");
-}
-public initialForm(){
-  this.form=this.formB.group({
-    text:[" ",[Validators.required,Validators.minLength(5)]]
-  });
 
-}
+  public text: string = "";
+  public soumettre() {
+    console.log(this.tabEmailFreelance);
+    this.text = this.form.get("text").value;
+    for (let i = 0; i < this.tabFreelance.length; i++) {
+      this.service.sendMail(this.text, this.tabEmailFreelance[i])
+      console.log(this.tabEmailFreelance[i])
+      console.log("envoyer");
+    }
+  }
+
+  public mail() {
+    this.tabFreelance.forEach(element => {
+      console.log(element.mail)
+      this.tabEmailFreelance.push(element.mail);
+    });
+    console.log(this.tabEmailFreelance);
+
+  }
+
+
+  public initialForm() {
+    this.form = this.formB.group({
+      text: [" ", [Validators.required, Validators.minLength(5)]],
+
+    });
+
+  }
 }
