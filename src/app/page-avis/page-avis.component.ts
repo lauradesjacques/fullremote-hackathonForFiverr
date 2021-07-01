@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { FreelancerService } from '../common/freelancer.service';
 
@@ -11,7 +12,7 @@ import { FreelancerService } from '../common/freelancer.service';
 })
 export class PageAvisComponent implements OnInit {
 
-  constructor(private service: FreelancerService, private formB: FormBuilder) { }
+  constructor(private service: FreelancerService, private formB: FormBuilder, private router : Router) { }
 
   public form: FormGroup;
   public tabFreelance: any[] = [];
@@ -31,14 +32,17 @@ export class PageAvisComponent implements OnInit {
   }
 
   public text: string = "";
+  public contenueMessage :string ="Bonjour, \n Vous avez une nouvelle demande d’avis de la part d'adel  \r CLIQUER SUR LE LIENS ";
   public soumettre() {
     console.log(this.tabEmailFreelance);
     this.text = this.form.get("text").value;
+    this.service.recupeMessage(this.text)
     for (let i = 0; i < this.tabFreelance.length; i++) {
-      this.service.sendMail(this.text, this.tabEmailFreelance[i])
+      this.service.sendMail(this.contenueMessage, this.tabEmailFreelance[i])
       console.log(this.tabEmailFreelance[i])
       console.log("envoyer");
     }
+    this.router.navigate(["/page-reponse"])
   }
 
   public mail() {
@@ -53,7 +57,7 @@ export class PageAvisComponent implements OnInit {
 
   public initialForm() {
     this.form = this.formB.group({
-      text: [" ", [Validators.required, Validators.minLength(5)]],
+      text: ["j'ai besoin d'aide sur l'un de mes projets sur les appels API ", [Validators.required, Validators.minLength(5)]],
 
     });
 

@@ -13,3 +13,7 @@ p {
 .myselect {
   height: 20%;
 }
+ #coins{
+   color: #198754;
+   font-weight: bolder;
+ }

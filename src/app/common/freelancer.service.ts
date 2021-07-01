@@ -17,10 +17,17 @@ export class FreelancerService {
 
   public sendMail(text: string, mail: string) {
     console.log("boulette");
-
     let result: Observable<any> = this.http.get(this.urlApi + '/email?text=' + text + '&mail=' + mail + '&sujet=Demandeavis')
     result.subscribe((reponse) => { });
 
+  }
+  public text :string =""
+
+  public returnMessage():string {
+    return this.text;
+  }
+  public recupeMessage(message :string ):string{
+    return this.text = message;
   }
 }
 

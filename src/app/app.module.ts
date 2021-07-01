@@ -9,6 +9,7 @@ import { RouterModule } from '@angular/router';
 import { ROUTES} from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PageReponseComponent } from './page-reponse/page-reponse.component';
 
 
 
@@ -16,7 +17,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   declarations: [
     AppComponent,
     AccueilComponent,
-    PageAvisComponent
+    PageAvisComponent,
+    PageReponseComponent
   ],
   imports: [
     BrowserModule,
